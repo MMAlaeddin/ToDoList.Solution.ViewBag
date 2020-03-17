@@ -17,6 +17,7 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
+      // gets Items table
       List<Item> model = _db.Items.ToList(); // ToList from Linq - replaces GetAll() method
       return View(model);
     }
