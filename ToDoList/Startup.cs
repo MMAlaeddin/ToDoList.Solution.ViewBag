@@ -10,12 +10,12 @@ namespace ToDoList
 {
   public class Startup
   {
-    //we've added the connection string and dependencies, we must tell our app what to do with it;
+    //we've added the connection string (in appsettings.json) and dependencies, we must tell our app what to do with it;
     public Startup(IHostingEnvironment env)
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
-          .AddJsonFile("appsettings.json");
+          .AddJsonFile("appsettings.json"); // "hey program, look at this file"
       Configuration = builder.Build();
     }
 
