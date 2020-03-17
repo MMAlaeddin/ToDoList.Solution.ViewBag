@@ -3,6 +3,8 @@
 }
 @* we take in model from controller *@
 @using ToDoList.Models; 
+@model List<ToDoList.Models.Item>;
+
 
 <h1>Items</h1>
 
@@ -10,11 +12,12 @@
 {
   <h3>No items have been added yet!</h3>
 } 
-
+<ul>
 @foreach (Item item in Model)
 {
-  <li>@item.Description</li> 
+  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li> 
+  @* The code new { id = item.ItemId } creates an anonymous object with the property id. This is how .NET knows which id to use in the Details action *@
 }
-
+</ul>
 <p>@Html.ActionLink("Add new item", "Create")</p>
 @* were already in items controller, so we dont need to say Items as third param *@
