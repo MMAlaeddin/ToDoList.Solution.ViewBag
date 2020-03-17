@@ -1,8 +1,8 @@
 @{
   Layout = "_Layout";
 }
-
-@using ToDoList.Models;
+@* we take in model from controller *@
+@using ToDoList.Models; 
 
 <h1>Items</h1>
 
@@ -13,5 +13,5 @@
 
 @foreach (Item item in Model)
 {
-  <li>@item.Description</li>
+  <li>@item.Description</li> 
 }
